@@ -1,0 +1,66 @@
+{
+    "leftPanel": {
+        "device": "使用设备",
+        "theme": "系统主题",
+        "language": "显示语言",
+        "login": "现在登录"
+    },
+    "message-window-btn": "确定",
+    "message-window-btn-help": "需要帮助",
+    "message-window-btn-cancle": "取消",
+    "information": [
+        "未找到内容。",
+        "当前使用的设备是",
+        "当前系统主题是",
+        "点击确定将退出登录...",
+        "暂无数据。",
+        "提示",
+        "请填写完整。",
+        "操作失败！",
+        "操作成功！",
+        "未找到要处理的数据。"
+    ],
+    "login-window": [
+        "请登录",
+        "请输入账户名",
+        "请输入密码",
+        "登录",
+        "取消",
+        "记住我的登录状态"
+    ],
+    "deviceType": [
+        "电脑",
+        "平板",
+        "手机"
+    ],
+    "userMenu": [
+        "我的账号",
+        "后台管理",
+        "会话重置",
+        "退出登录"
+    ],
+    "position": {
+        "home": "首页",
+        "nav": "所有栏目",
+        "back": "返回",
+        "blog": "博客",
+        "media": "媒体",
+        "lab": "实验",
+        "mgr": "管理首页"
+    },
+    "mgr-menu": {
+        "menu": "栏目管理",
+        "archive": "文章管理",
+        "link": "友链管理",
+        "photo": "相册管理",
+        "user": "会员管理",
+        "home": "返回网站",
+        "account": "我的账号",
+        "setup": "系统设置"
+    },
+    "device-menu": {
+        "other": "其他项",
+        "device": "设备类型",
+        "theme": "系统主题"
+    }
+}

@@ -1,0 +1,389 @@
+:ROOT {
+  --R: .7rem;
+}
+
+/* 当系统主题设置为高对比度模式时应用的样式 */
+@media (prefers-color-scheme: light) {
+  :ROOT {
+    --pageBackground: #efefef;
+    --mainBackground: white;
+    --mainColor: #ff4250;
+    --secColor: #22bbb2;
+    --light1Color: #ff7f95;
+    --light2Color: #eee;
+    --trColor: rgba(0, 0, 0, .3);
+    --A: #71777d;
+    --B: rgba(0, 0, 0, .5);
+  }
+
+  body {
+    color: #71777d !important;
+  }
+
+  .van-grid *:not(.-icon) {
+    background: transparent !important;
+  }
+
+  .menu,
+  .menu * {
+    background: var(--light2Color) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :ROOT {
+    --pageBackground: #222;
+    --mainBackground: #444;
+    --mainColor: #ff8f6a;
+    --secColor: #64965a;
+    --light1Color: #71777d;
+    --light2Color: black;
+    --trColor: rgba(255, 255, 255, .2);
+    --A: lightgray;
+    --B: black;
+  }
+
+  body {
+    color: lightgray !important;
+  }
+
+  .van-nav-bar .van-icon,
+  .van-nav-bar__text {
+    color: var(--A) !important;
+  }
+
+  .van-nav-bar {
+    background: var(--light2Color) !important;
+  }
+
+  .van-nav-bar__title {
+    color: var(--A) !important;
+  }
+
+  .van-grid *:not(.-icon) {
+    background: transparent !important;
+  }
+
+  .menu,
+  .menu * {
+    background: var(--light1Color) !important;
+  }
+}
+
+/* mob */
+@media (max-width:1000px) {
+  .main-right {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .page-scroll-box {
+    height: calc(100vh - 40px);
+  }
+}
+
+/* pc */
+@media (min-width:1000px) {
+  .main-right {
+    margin: 130px 10px;
+    height: calc(100vh - 260px);
+    /* padding: 5px 15px; */
+    box-shadow: 10px 10px 35px 1px var(--B);
+    border-radius: var(--R);
+  }
+
+  .page-scroll-box {
+    height: calc(100vh - 300px);
+  }
+}
+
+body {
+  background-color: var(--pageBackground) !important;
+}
+
+.van-nav-bar__left>* {
+  color: var(--A) !important;
+}
+
+.breadcrumb {
+  margin: 0 !important;
+  padding-left: 10px !important;
+  background: var(--light2Color);
+}
+
+.breadcrumb .breadcrumb-item {
+  color: var(--A) !important;
+}
+
+a {
+  color: var(--A) !important;
+  transition: 300ms;
+}
+
+a:hover {
+  color: var(--mainColor) !important;
+}
+
+.border-bottom {
+  padding: 5px;
+  border-bottom: solid 1px var(--light2Color);
+}
+
+.label {
+  font-size: small;
+}
+
+.c-arrow {
+  cursor: default;
+}
+
+.-hover {
+  box-shadow: 0 0 5px 2px transparent;
+  transition: 300ms;
+}
+
+.-hover:hover {
+  box-shadow: 0 0 5px 2px var(--mainColor);
+}
+
+.page-scroll-box {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
+.main-right {
+  background-color: var(--mainBackground);
+  overflow: hidden;
+}
+
+.pc-left-panel {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 400px;
+  text-align: right;
+  margin: 0 auto;
+}
+
+.pc-left-panel .large {
+  font-size: 5rem;
+  font-weight: lighter;
+  color: var(--secColor);
+}
+
+.pc-left-panel .desc {
+  font-size: smaller;
+  color: darkgray;
+  padding-right: 25px;
+}
+
+._panel {
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+._panel>.item {
+  background-color: var(--mainBackground);
+  padding: 15px 10px;
+  border-radius: var(--R);
+  text-transform: uppercase;
+  color: var(--A);
+  font-size: small;
+  margin: 0 5px;
+  min-width: 110px;
+}
+
+._panel>.item .-icon {
+  margin-bottom: 5px;
+}
+
+._footer {
+  margin-top: 50px;
+}
+
+.-icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.-icon.-icon-large {
+  width: 45px !important;
+  height: 45px !important;
+}
+
+.-icon.-icon-pc {
+  background-image: url('./assets/icons/pc.png');
+}
+
+.-icon.-icon-pad {
+  background-image: url('./assets/icons/pad.png');
+}
+
+.-icon.-icon-mob {
+  background-image: url('./assets/icons/mob.png');
+}
+
+.-icon.-icon-systemTheme-light {
+  background-image: url('./assets/icons/theme-light.png');
+}
+
+.-icon.-icon-systemTheme-dark {
+  background-image: url('./assets/icons/theme-dark.png');
+}
+
+.-icon.-icon-systemTheme-none {
+  background-image: url('./assets/icons/error.gif');
+}
+
+.-icon.-icon-user {
+  background-image: url('./assets/icons/user.png');
+}
+
+.-icon.-icon-lan {
+  background-image: url('./assets/icons/lan.png');
+}
+
+.-icon.-icon-arrow-up {
+  background-image: url('./assets/icons/arrow-up.png');
+}
+
+.-icon.-icon-arrow-down {
+  background-image: url('./assets/icons/arrow-down.png');
+}
+
+.-icon.-icon-home {
+  background-image: url('./assets/icons/home.png');
+}
+
+.-icon.-icon-media {
+  background-image: url('./assets/icons/media.png');
+}
+
+.-icon.-icon-lab {
+  background-image: url('./assets/icons/lab.png');
+}
+
+.-icon.-icon-blog {
+  background-image: url('./assets/icons/blog.png');
+}
+
+.-icon.-icon-link {
+  background-image: url('./assets/icons/link.png');
+}
+
+.-icon.-icon-menu {
+  background-image: url('./assets/icons/menu.png');
+}
+
+.-icon.-icon-photo {
+  background-image: url('./assets/icons/photo.png');
+}
+
+.-icon.-icon-archive {
+  background-image: url('./assets/icons/archive.png');
+}
+
+.-icon.-icon-account {
+  background-image: url('./assets/icons/account.png');
+}
+
+.-icon.-icon-setup {
+  background-image: url('./assets/icons/setup.png');
+}
+
+.-window {
+  position: fixed;
+  z-index: 9900;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: var(--trColor);
+  top: 0;
+  left: 0;
+}
+
+.-window.-window-login>.inner {
+  width: 300px;
+  min-height: 160px;
+  height: auto !important;
+}
+
+.-window>.inner {
+  width: 300px;
+  height: 120px;
+  margin: 0 auto;
+  background-color: var(--mainBackground);
+  border-radius: var(--R);
+  overflow: hidden;
+}
+
+.-window>.inner>.-window-panel {
+  border-top: solid 1px var(--pageBackground);
+  display: flex;
+  width: 100%;
+}
+
+.-window>.inner>.-window-panel>.item {
+  flex: 1;
+}
+
+.-window>.inner>.-window-panel>.item:last-child>div {
+  background-color: var(--mainColor);
+}
+
+.-window>.inner>.-window-panel .-window-btn {
+  background-color: var(--secColor);
+  text-align: center;
+  color: white;
+  padding: 10px;
+  transition: 300ms;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.-window>.inner>.-window-panel .-window-btn:hover {
+  font-size: large;
+}
+
+/* 美化整个滚动条 */
+.page-scroll-box::-webkit-scrollbar {
+  width: 5px;
+  /* 设置滚动条的宽度 */
+  background-color: var(--mainBackground);
+  /* 滚动条的背景颜色 */
+}
+
+/* 美化滚动条轨道 */
+.page-scroll-box::-webkit-scrollbar-track {
+  background: transparent;
+  /* 轨道的背景颜色 */
+  border-radius: 10px;
+  /* 轨道的圆角 */
+}
+
+/* 美化滚动条的滑块 */
+.page-scroll-box::-webkit-scrollbar-thumb {
+  background-color: var(--B);
+  /* 滑块的背景颜色 */
+  border-radius: 10px;
+  /* 滑块的圆角 */
+  border: 0;
+  /* 滑块边框 */
+}
+
+/* 当滑块悬停或活动时的样式 */
+.page-scroll-box::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+  /* 悬停或活动状态下滑块的背景颜色 */
+}

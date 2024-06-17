@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?><div style="display:flex;align-items:center;text-align:center;"><div>zhangyixuan.net wellcomes you.</div></div>

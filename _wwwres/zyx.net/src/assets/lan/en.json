@@ -1,0 +1,66 @@
+{
+    "leftPanel": {
+        "device": "device",
+        "theme": "theme",
+        "language": "language",
+        "login": "login"
+    },
+    "message-window-btn": "OKAY",
+    "message-window-btn-help": "NEED HELP",
+    "message-window-btn-cancle": "CANCLE",
+    "information": [
+        "Can not find anything.",
+        "Your device: ",
+        "System theme: ",
+        "Click [OKAY] to logout.",
+        "No-data.",
+        "TIP: ",
+        "please complete the form.",
+        "Failure!",
+        "Success!",
+        "No data found."
+    ],
+    "login-window": [
+        "Login please",
+        "your account",
+        "your password",
+        "login now",
+        "cancle",
+        "Keep my login status"
+    ],
+    "deviceType": [
+        "PC",
+        "PAD",
+        "PHONE"
+    ],
+    "userMenu": [
+        "Account",
+        "Site manager",
+        "Session reset",
+        "Exit"
+    ],
+    "position": {
+        "home": "Home",
+        "nav": "Menu",
+        "back": "Back",
+        "blog": "Blog",
+        "media": "Media",
+        "lab": "Laboratory",
+        "mgr": "Web manager"
+    },
+    "mgr-menu": {
+        "menu": "MENU",
+        "archive": "ARCHIVE",
+        "link": "LINK",
+        "photo": "PHOTO",
+        "user": "USER",
+        "home": "SITE",
+        "account": "ACCOUNT",
+        "setup": "SETTINGS"
+    },
+    "device-menu": {
+        "other": "ANOTHER ITEMS",
+        "device": "DEVICE",
+        "theme": "THEME"
+    }
+}
