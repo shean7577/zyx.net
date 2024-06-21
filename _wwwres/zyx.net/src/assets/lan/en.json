@@ -3,7 +3,8 @@
         "device": "device",
         "theme": "theme",
         "language": "language",
-        "login": "login"
+        "login": "login",
+        "already-login": "account"
     },
     "message-window-btn": "OKAY",
     "message-window-btn-help": "NEED HELP",
@@ -18,7 +19,9 @@
         "please complete the form.",
         "Failure!",
         "Success!",
-        "No data found."
+        "No data found.",
+        "No more data",
+        "Input error"
     ],
     "login-window": [
         "Login please",
@@ -46,7 +49,10 @@
         "blog": "Blog",
         "media": "Media",
         "lab": "Laboratory",
-        "mgr": "Web manager"
+        "mgr": "Web manager",
+        "mgrMember": "Member",
+        "mgrMember-detail": "Member detail",
+        "mgrMenu-add": "CREATE ITEM"
     },
     "mgr-menu": {
         "menu": "MENU",
@@ -56,11 +62,24 @@
         "user": "USER",
         "home": "SITE",
         "account": "ACCOUNT",
-        "setup": "SETTINGS"
+        "setup": "SETTINGS",
+        "menu-add": "CREATE ITEM",
+        "menu-list": "ALL ITEM"
     },
     "device-menu": {
         "other": "ANOTHER ITEMS",
         "device": "DEVICE",
         "theme": "THEME"
+    },
+    "member-data": {
+        "name": "NAME",
+        "pswd": "PASSWORD",
+        "level": "LEVEL",
+        "mail": "E-MAIL",
+        "site": "WEBSITE",
+        "integral": "INTEGRAL"
+    },
+    "action": {
+        "submit": "SUBMIT"
     }
 }

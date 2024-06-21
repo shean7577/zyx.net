@@ -47,4 +47,48 @@ class IndexController extends CommonController
         $member = M('user')->where($fd)->find();
         $this->ao(["id" => $member['id'], "type" => $member['type'], "name" => $member['name']]);
     }
+    /**
+     * 用ID获取用户信息
+     */
+    public function memberData()
+    {
+        $fd = $this->ai();
+        $member = M('user')->where($fd)->find();
+        $this->ao([
+            "name" => $member['name'],
+            "mail" => $member['mail'],
+            "site" => $member['site'],
+            "level" => $member['level'],
+            "integral" => $member['integral'],
+            "type" => $member['type']
+        ]);
+    }
+
+    /**
+     * 会员列表
+     */
+    public function memberList()
+    {
+        $fd = $this->ai();
+        $start = $fd['currentPage'] - 1;
+        $end = $start + $fd['pageSize'];
+        $member = M('user')->limit($start, $end)->select();
+        $this->ao($member);
+    }
+    /**
+     * 会员数据更新
+     */
+    public function memberUpdate()
+    {
+        $fd = $this->ai();
+        $member = M('user')->where("id='" . $fd["id"] . "'")->save($fd);
+        $this->ao($member);
+    }
+    /**
+     * 所有分类
+     */
+    public function menuList()
+    {
+        $this->ao(M('menu')->select());
+    }
 }

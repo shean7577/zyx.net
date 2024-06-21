@@ -27,6 +27,7 @@
 
         <!-- 移动端才显示 -->
         <div class="show-md">
+            <!-- 其他 -->
             <div class="text-center border-bottom" style="margin:50px 0 20px 0;">{{ props.lan['device-menu'].other }}
             </div>
             <van-grid :column-num="2" :border="false" style="margin-bottom:50px;">
@@ -43,16 +44,60 @@
                     <div class="text-uppercase text-bold">{{ props.device.text }}</div>
                 </van-grid-item>
             </van-grid>
-        </div>
 
-        <!-- img cover -->
-        <div class="text-center">
-            <van-image style="filter:opacity(.3) grayscale(1)" height="30vh" :round="true" fit="contain"
-                :src="com.bas.getPath('images/menu.png')" />
-            <div class="text-gray">{{ com.cfg.siteName }}</div>
-            <div class="text-gray text-small">{{ com.cfg.siteURL }}</div>
-        </div>
+            <!-- 语言 -->
+            <div class="text-center border-bottom" style="margin:50px 0 20px 0;">{{ props.lan['leftPanel'].language }}
+            </div>
+            <div class="btn-group btn-group-block" style="margin:30px 0;">
+                <template v-for="(item, index) in com.cfg.lanList">
+                    <div :class="lanCurrentName === item.file ? 'btn btn-theme' : 'btn btn-link text-gray'"
+                        @click="() => { lanCurrentName = item.file; props.onlanguagechange(item.file); }">
+                        {{ item.name }}
+                    </div>
+                </template>
+            </div>
 
+            <!-- 用户菜单 -->
+            <template v-if="props.logsta.isLogin === true">
+                <div class="text-center border-bottom" style="margin:50px 0 20px 0;">
+                    {{ props.lan.leftPanel['already-login'] }} ({{ props.userData.name }})
+                </div>
+                <van-grid :column-num="2" :border="false" style="margin: 50px 0;">
+                    <template v-for="(item, index) in com.cfg.userMenu">
+                        <template v-if="!item.onlyMgr || userData.type === 'manager'">
+                            <van-grid-item @click="() => {
+        if (item.icon === 'exit') {
+            props.doLogout()
+        } else if (item.icon === 'reset') {
+            resetSession()
+        } else {
+            item.onClick()
+        }
+    }" class="c-hand">
+                                <div :class="'-icon -icon-large -icon-' + item.icon"></div>
+                                <div class="mt-2">{{ props.lan.userMenu[index] }}</div>
+                            </van-grid-item>
+                        </template>
+                        <template v-else>
+                            <van-grid-item class="c-hand">
+                                <div class="-icon -icon-large -icon-home"></div>
+                                <div class="mt-2">{{ props.lan.userMenu[index] }}</div>
+                            </van-grid-item>
+                        </template>
+                    </template>
+                </van-grid>
+            </template>
+            <template v-else>
+                <div class="text-center border-bottom" style="margin:50px 0 20px 0;">
+                    {{ props.lan.leftPanel.login }}
+                </div>
+                <div class="text-center" style="margin-bottom: 30px;">
+                    <div @click="props.doLogin">
+                        <div class="-icon -icon-user -icon-large"></div>
+                    </div>
+                </div>
+            </template>
+        </div>
     </div>
 
 
@@ -63,12 +108,29 @@
     import router from "../router";
     import com from "../common/com"
 
+    const lanCurrentName = ref(localStorage.getItem('lan'))
+
     const props = defineProps({
         lan: Object,
-        logsta: Boolean,
+        logsta: Object,
         theme: Object,
-        device: Object
+        device: Object,
+        userData: Object,
+        doMessage: Function,
+        onlanguagechange: Function,
+        doLogin: Function,
+        doLogout: Function
     })
+
+    const resetSession = () => {
+        const cond = (localStorage.getItem('memberData') && localStorage.getItem('memberData').length > 10);
+        if (cond) {
+            localStorage.removeItem('memberData')
+            props.doMessage({ show: true, message: props.lan.information[5] + '<br/>' + props.lan.information[8] })
+        } else {
+            props.doMessage({ show: true, message: props.lan.information[5] + '<br/>' + props.lan.information[9] })
+        }
+    }
 
 </script>
 

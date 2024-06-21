@@ -2,7 +2,7 @@
     <van-nav-bar :title="props.lan.position.mgr" :left-text="props.lan.position.back" left-arrow
         @click-left="() => { router.go(-1) }" />
     <div class="page-scroll-box">
-        <van-grid :column-num="2" :border="false" style="margin: 50px 0;" :gutter="50">
+        <van-grid :column-num="2" :border="false" style="margin: 50px 0;" :gutter="10">
             <!-- 网站预览 -->
             <van-grid-item @click="router.push('/')" class="c-hand">
                 <div class="-icon -icon-large -icon-home"></div>
@@ -44,14 +44,6 @@
                 <div class="mt-2">{{ props.lan['mgr-menu'].setup }}</div>
             </van-grid-item>
         </van-grid>
-
-        <!-- img cover -->
-        <div class="text-center">
-            <van-image style="filter:opacity(.3) grayscale(1)" height="30vh" :round="true" fit="contain"
-                :src="com.bas.getPath('images/menu.png')" />
-            <div class="text-gray">{{ com.cfg.siteName }}</div>
-            <div class="text-gray text-small">{{ com.cfg.siteURL }}</div>
-        </div>
     </div>
 </template>
 
@@ -62,20 +54,25 @@
 
     const props = defineProps({
         lan: Object,
-        logsta: Boolean,
+        logsta: Object,
         theme: Object,
-        device: Object
+        device: Object,
+        userData: Object,
+        doMessage: Function,
+        onlanguagechange: Function,
+        doLogin: Function,
+        doLogout: Function
     })
 
     onMounted(() => {
         chkSession()
     })
 
-    watch(() => props.logsta, () => {
+    watch(() => props.logsta.logsta, () => {
         chkSession()
     })
     const chkSession = () => {
-        if (props.logsta === false) {
+        if (props.logsta.logsta === false) {
             router.push('/')
         }
     }

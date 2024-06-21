@@ -1,5 +1,5 @@
 <template>
-    <van-nav-bar :title="com.cfg.siteName" />
+    <van-nav-bar :title="props.lan.position.home" />
     <div class="page-scroll-box">
         333
 
@@ -12,9 +12,14 @@
 
     const props = defineProps({
         lan: Object,
-        logsta: Boolean,
+        logsta: Object,
         theme: Object,
-        device: Object
+        device: Object,
+        userData: Object,
+        doMessage: Function,
+        onlanguagechange: Function,
+        doLogin: Function,
+        doLogout: Function
     })
 </script>
 

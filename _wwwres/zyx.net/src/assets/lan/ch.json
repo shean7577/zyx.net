@@ -3,7 +3,8 @@
         "device": "使用设备",
         "theme": "系统主题",
         "language": "显示语言",
-        "login": "现在登录"
+        "login": "现在登录",
+        "already-login": "我的账号"
     },
     "message-window-btn": "确定",
     "message-window-btn-help": "需要帮助",
@@ -18,7 +19,9 @@
         "请填写完整。",
         "操作失败！",
         "操作成功！",
-        "未找到要处理的数据。"
+        "未找到要处理的数据。",
+        "没有更多了",
+        "页面入参错误"
     ],
     "login-window": [
         "请登录",
@@ -46,7 +49,10 @@
         "blog": "博客",
         "media": "媒体",
         "lab": "实验",
-        "mgr": "管理首页"
+        "mgr": "管理首页",
+        "mgrMember": "会员管理",
+        "mgrMember-detail": "会员详情",
+        "mgrMenu-add": "新建栏目项"
     },
     "mgr-menu": {
         "menu": "栏目管理",
@@ -56,11 +62,24 @@
         "user": "会员管理",
         "home": "返回网站",
         "account": "我的账号",
-        "setup": "系统设置"
+        "setup": "系统设置",
+        "menu-add": "新建栏目项",
+        "menu-list": "所有栏目项"
     },
     "device-menu": {
         "other": "其他项",
         "device": "设备类型",
         "theme": "系统主题"
+    },
+    "member-data": {
+        "name": "账户",
+        "pswd": "密码",
+        "level": "等级",
+        "mail": "邮件",
+        "site": "网站",
+        "integral": "积分"
+    },
+    "action": {
+        "submit": "提交"
     }
 }

@@ -14,9 +14,14 @@
 
     const props = defineProps({
         lan: Object,
-        logsta: Boolean,
+        logsta: Object,
         theme: Object,
-        device: Object
+        device: Object,
+        userData: Object,
+        doMessage: Function,
+        onlanguagechange: Function,
+        doLogin: Function,
+        doLogout: Function
     })
 </script>
 

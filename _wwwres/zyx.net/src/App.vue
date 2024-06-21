@@ -88,17 +88,21 @@
             </div>
           </div>
         </div>
-        <div class="column col-5 col-md-12 p-0">
+        <div class="column col-4 col-md-12 p-0">
           <div class="main-right">
             <!-- 页面 -->
-            <router-view :lan="currentLanguage" :logsta="(userData && userData.type === 'manager')"
+            <router-view :lan="currentLanguage"
+              :logsta="{ logsta: (userData && userData.type === 'manager'), isLogin: isLogin }"
               :device="{ icon: deviceType, text: (deviceType.indexOf('pc') >= 0) ? currentLanguage.deviceType[0] : (deviceType.indexOf('pad') >= 0) ? currentLanguage.deviceType[1] : currentLanguage.deviceType[2] }"
-              :theme="{ icon: systemTheme, text: com.bas.systemTheme() }" />
+              :theme="{ icon: systemTheme, text: com.bas.systemTheme() }" :userData="userData"
+              :doLogin="() => { loginData.show = true }" :doMessage="(md) => { messageData = md }"
+              :doLogout="() => { goExit() }" :onlanguagechange="e => { loadLan(e) }" />
 
             <!-- 悬浮菜单 -->
             <van-floating-bubble axis="xy" icon="wap-nav" magnetic="x" @click="goNav" />
           </div>
         </div>
+        <div class="column col-1 hide-md">&nbsp;</div>
       </div>
     </div>
 
@@ -144,42 +148,7 @@
   const userData = ref({})
 
   // userMenu 的排列顺序在语言包里
-  const userMenu = ref([
-    //我的信息
-    {
-      text: '',
-      onClick: () => { router.push('/account') }
-    },
-    //网站管理
-    {
-      text: '',
-      onClick: () => {
-        router.push('/mgr')
-      },
-      onlyMgr: true
-    },
-    //清空我的登录状态
-    {
-      text: '',
-      onClick: () => {
-        const cond = (localStorage.getItem('memberData') && localStorage.getItem('memberData').length > 10);
-        if (cond) {
-          localStorage.removeItem('memberData')
-          messageData.value.message = currentLanguage.value.information[5] + "<br/>" + currentLanguage.value.information[8]
-        } else {
-          messageData.value.message = currentLanguage.value.information[5] + "<br/>" + currentLanguage.value.information[9]
-        }
-        messageData.value.show = true
-      }
-    },
-    //退出登录
-    {
-      text: '',
-      onClick: () => {
-        showExit.value = true;
-      }
-    },
-  ])
+  const userMenu = ref(com.cfg.userMenu)
 
 
   // 退出登录提示

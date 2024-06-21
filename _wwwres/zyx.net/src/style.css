@@ -68,6 +68,11 @@
   .menu * {
     background: var(--light1Color) !important;
   }
+
+  .van-cell-group,
+  .van-cell {
+    background: var(--pageBackground) !important;
+  }
 }
 
 /* mob */
@@ -85,8 +90,8 @@
 /* pc */
 @media (min-width:1000px) {
   .main-right {
-    margin: 130px 10px;
-    height: calc(100vh - 260px);
+    margin: 80px 10px;
+    height: calc(100vh - 160px);
     /* padding: 5px 15px; */
     box-shadow: 10px 10px 35px 1px var(--B);
     border-radius: var(--R);
@@ -102,6 +107,21 @@ body {
 }
 
 .van-nav-bar__left>* {
+  color: var(--A) !important;
+}
+
+.van-floating-bubble {
+  background: var(--B) !important;
+}
+
+.btn.btn-theme {
+  background: var(--pageBackground) !important;
+  border-color: var(--mainBackground) !important;
+  color: var(--A) !important;
+}
+
+.bg-theme {
+  background: var(--pageBackground) !important;
   color: var(--A) !important;
 }
 
@@ -296,6 +316,22 @@ a:hover {
 
 .-icon.-icon-setup {
   background-image: url('./assets/icons/setup.png');
+}
+
+.-icon.-icon-reset {
+  background-image: url('./assets/icons/reset.png');
+}
+
+.-icon.-icon-exit {
+  background-image: url('./assets/icons/exit.png');
+}
+
+.-icon.-icon-menu-add {
+  background-image: url('./assets/icons/menu-add.png');
+}
+
+.-icon.-icon-menu-list {
+  background-image: url('./assets/icons/menu-list.png');
 }
 
 .-window {
